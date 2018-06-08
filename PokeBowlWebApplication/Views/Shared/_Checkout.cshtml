@@ -1,0 +1,38 @@
+﻿       <!-- Checkout -->
+<div style="max-height:90vh; overflow:scroll;" class="toolbar-section" id="checkout">
+    <form  method="post" class="checkout-form container">
+        <div class="cart-subtotal space-bottom">
+            <div class="column">
+                <h3 class="toolbar-title">Sissta steget</h3>
+            </div>
+            <div class="column">
+                <h3 class="amount"><small class="hidden-xs">3 varor&nbsp;&nbsp;&nbsp;</small>Totalt: 161kr</h3>
+            </div>
+        </div><!-- .subtotal -->
+        <div class="row">
+            <div class="col-md-6">
+                <label>Förnamn</label>
+                <input type="text" class="form-control" name="co_f_name" placeholder="Förnamn" required>
+            </div>
+            <div class="col-md-6">
+                <label>Efternamn</label>
+                <input type="text" class="form-control" name="co_l_name" placeholder="Efternamn" required>
+            </div>
+            <div class="col-md-6">
+                <label>E-post</label>
+                <input autocomplete="email" type="email" class="form-control" name="co_email" placeholder="E-post" required>
+            </div>
+            <div class="col-md-6">
+                <label>Telefon</label>
+                <input type="tel" class="form-control" name="co_phone" placeholder="Telefon" required>
+            </div>
+        </div><!-- .row -->
+        <div class="text-right">
+            <a href="#cart" class="btn btn-default btn-ghost icon-left toggle-section">
+                <i class="material-icons arrow_back"></i>
+                Tillbaka
+            </a>
+            <button type="submit" class="btn btn-primary waves-effect waves-light">Skicka order</button>
+        </div>
+    </form><!-- .checkout-form.container -->
+</div><!-- .toolbar-section#checkout -->

@@ -1,0 +1,55 @@
+﻿::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.hide-scroll::-webkit-scrollbar { 
+    /*display: none;*/ 
+     width: 5px !important
+}
+
+.noscroll { 
+  overflow: hidden;
+}
+
+/*#cover{
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+    z-index:5000;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}*/
+
+.white {
+    color: white;
+}
+
+.main-navigation > li > a {
+    font-size: 20px;
+}
+
+a, p, .shopping-cart .item .item-price {
+    font-size: 16px;
+}
+
+
+.toolbar-title {
+    font-size: 22px;
+}
+
+@media screen and (max-width: 691px) {
+    .toolbar-title {
+        font-size: 18px;
+    }
+
+    a, p, .shopping-cart .item .item-price {
+        font-size: 14px;
+    }
+}

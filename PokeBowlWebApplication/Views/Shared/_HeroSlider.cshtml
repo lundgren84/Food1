@@ -1,0 +1,19 @@
+﻿       <!-- Hero Slider -->
+<!-- Data API:
+  data-loop="true/false" enable/disable looping
+  data-autoplay="true/false" enable/disable carousel autoplay
+  data-interval="3000" autoplay interval timeout in miliseconds
+  Simply add necessary data attribute to the ".hero-carousel" with appropriate value to adjust carousel functionality.
+ -->
+<section class="hero-slider" data-loop="true" data-autoplay="true" data-interval="7000">
+    <div class="inner">
+      
+
+@{ 
+    Html.RenderPartial("_Slide");
+    Html.RenderPartial("_Slide");
+    Html.RenderPartial("_Slide");
+}
+   
+    </div><!-- .inner -->
+</section><!-- .hero-slider -->

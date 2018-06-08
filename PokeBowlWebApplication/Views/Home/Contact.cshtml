@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<!-- Google Map -->
+<!-- Data API:
+     data-height="500" height of the map in pixels
+     data-address="Your address" string
+     data-zoom="number" to control map zoom when loaded
+     data-disable-controls="false/true" enable/disable map controls like pan, zoom, etc.
+     data-scrollwheel="true/false" enable/disable mouse scroll wheel zoom
+     data-marker="path_to_your_image" path to custom marker image
+     data-marker-title=" Your title" appears on marker hover
+     data-styles="[array]" you can adjust the look and feel of your map. Recommend to use https://snazzymaps.com
+ -->
+<div class="google-map"
+     data-height="480"
+     data-address="Mariagatan 2 Helsingborg , Sweden"
+     data-address2="Grepgatan 34, 254 48 Helsingborg , Sweden"
+     data-zoom="12"
+     data-disable-controls="false"
+     data-scrollwheel="false"
+     data-marker="../../Resourses/img/map-marker.png"
+     data-marker-title="Poke hbg city"
+     data-styles='[{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]}]'></div><!-- .google-map -->
+<!-- Container -->
+<section class="container space-top-2x">
+    <div class="row">
+        <div class="col-sm-6 padding-bottom-2x">
+            <h2>Helsingborg city</h2>
+            <ul class="list-icon">
+                <li>
+                    <i class="material-icons location_on"></i>
+                    Mariagatan 2, 252 23 <br />Helsingborg Sverige
+                </li>
+                <li>
+                    <i class="material-icons phone"></i>
+                    076-317 35 99
+                </li>
+                <li>
+                    <i class="material-icons  query_builder"></i>
+                    Öppet tider: <br />
+                    <span class="text-gray">10:00 - 21:00, Måndagn - Fredag</span><br />
+                    <span class="text-gray">10:00 - 21:00, Lördag</span><br />
+                    <span class="text-gray">10:00 - 21:00, Söndag</span>
+                </li>
+            </ul><!-- .list-icon -->  
+        </div><!-- .col-sm-5 -->
+        <div class="col-sm-6 padding-bottom-2x">
+            <h2>Mariapark</h2>
+            <ul class="list-icon">
+                <li>
+                    <i class="material-icons location_on"></i>
+                    Mariagatan 2, 252 23 <br />Helsingborg Sverige
+                </li>
+                <li>
+                    <i class="material-icons phone"></i>
+                    076-317 35 99
+                </li>
+                <li>
+                    <i class="material-icons  query_builder"></i>
+                    Öppet tider: <br />
+                    <span class="text-gray">10:00 - 21:00, Måndagn - Fredag</span><br />
+                    <span class="text-gray">10:00 - 21:00, Lördag</span><br />
+                    <span class="text-gray">10:00 - 21:00, Söndag</span>
+                </li>
+            </ul><!-- .list-icon -->
+            <p>
+           
+            </p>
+        </div><!-- .col-sm-7 -->
+    </div><!-- .row -->
+</section><!-- .container -->

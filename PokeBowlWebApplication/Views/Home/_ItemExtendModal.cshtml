@@ -1,0 +1,37 @@
+﻿ @model PokeBowlWebApplication.Models.Home.ExtrasModalViewModel
+
+<div class="modal fade bs-example-modal-lg  @Model.ModalId" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">@Model.Heading</h4>
+            </div>
+            <div class="modal-body row">
+                @{
+                    foreach (var extras in Model.Extras)
+                    {
+                        <div class="col-sm-6">
+                            <div style="margin-bottom:0;" class="form-group">
+                                <label class="checkbox">
+                                    <input type="checkbox"> @extras.Name (+@extras.Price)
+                                </label>
+                      
+                            </div>
+                        </div>
+                    }
+                }
+                <div class="col-sm-12">
+                    <div style="margin-bottom:0;" class="form-group">
+                   <p style="margin-bottom:0;">Lägg i varukorg?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p style="display: inline-block; margin: 0; float: left;">Total: @Model.ProductPrice</p>
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Avbryt</button>
+                <button style="margin-left:0;" type="button" class="btn btn-sm btn-primary">Lägg till varukorg</button>
+            </div>
+        </div>
+    </div>
+</div>

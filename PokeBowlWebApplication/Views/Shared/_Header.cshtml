@@ -1,0 +1,44 @@
+﻿        <!-- Navbar -->
+<!-- Remove ".navbar-sticky" class to make navigation bar scrollable with the page. -->
+<header class="navbar navbar-sticky">
+
+    <!-- Site Logo -->
+    <a style="padding:15px;" href="~/" class="site-logo visible-desktop">
+        <img style="max-height:50px; width:auto" src="~/Resourses/img/Poke/logo_small.JPG" />
+    </a><!-- site-logo.visible-desktop -->
+    <a href="~/" class="site-logo visible-mobile">
+        <img style="max-height:50px; width:auto" src="~/Resourses/img/Poke/logo_small.JPG" />
+    </a><!-- site-logo.visible-mobile -->
+    <!-- Language Switcher -->
+    @*<div class="lang-switcher">
+        <div class="lang-toggle">
+            <img src="~/Resourses/img/flags/GB.png" alt="English">
+            <i class="material-icons arrow_drop_down"></i>
+            <ul class="lang-dropdown">
+                <li><a href="#"><img src="~/Resourses/img/flags/FR.png" alt="French">FR</a></li>
+                <li><a href="#"><img src="~/Resourses/img/flags/DE.png" alt="German">DE</a></li>
+                <li><a href="#"><img src="~/Resourses/img/flags/IT.png" alt="Italian">IT</a></li>
+            </ul>
+        </div>
+    </div>*@<!-- .lang-switcher -->
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <div class="inner">
+            <a href="#menu" class="toolbar-toggle open-menu-btn"><i class="material-icons menu"></i></a>
+            <a href="#account" class="toolbar-toggle open-account-btn"><i class="material-icons person"></i></a>
+            <a href="#cart" class="toolbar-toggle open-cart-btn">
+                <i>
+                    <span class="material-icons shopping_basket"></span>
+                    <span class="count">2</span>
+                </i>
+            </a>
+        </div>
+    </div><!-- .toolbar -->
+    <!-- Toolbar Dropdown -->
+    <div class="toolbar-dropdown">
+        @Html.Partial("_Navigation")
+        @Html.Partial("_Account")
+        @Html.Partial("_MiniCart")
+        @Html.Partial("_Checkout")
+    </div><!-- .toolbar-dropdown -->
+</header><!-- .navbar.navbar-sticky -->

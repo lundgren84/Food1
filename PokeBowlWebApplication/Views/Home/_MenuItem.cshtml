@@ -1,0 +1,27 @@
+﻿@model PokeBowlWebApplication.Models.Home.MenuItemViewModel
+@{ 
+    var modalTaret = "extras-modal-" + Model.Id.ToString();
+    Model.ExtrasModalModel.ModalId = modalTaret;
+    Model.ExtrasModalModel.Heading = Model.ExtrasModalModel.Heading+" - "+ Model.Heading;
+    Model.ExtrasModalModel.ProductPrice = Model.Price;
+}
+
+    <div data-toggle="modal" data-target=".@modalTaret" class="item origin-menu-item">
+        <div class="img-wrap">
+            <img class="img-circle" src=@Model.ImgUrl alt="Item">
+        </div>
+        <div class="item-details">
+                <h3 class="item-title">@Model.Heading - <span class="item-price">@Model.Price kr</span> </h3>
+                <p>
+                 @Model.Description
+                </p>
+        </div>
+        <div  class="item-remove" data-toggle="tooltip" data-placement="top" title="Add to cart">
+            <i class="material-icons shopping_cart"></i>
+        </div>
+    </div>
+
+@{
+    Html.RenderPartial("_ItemExtendModal",Model.ExtrasModalModel);
+}
+

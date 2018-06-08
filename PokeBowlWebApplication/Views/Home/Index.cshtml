@@ -1,0 +1,11 @@
+﻿@model PokeBowlWebApplication.Models.Home.HomeViewModel
+@{
+    ViewBag.Title = "Home";
+}
+
+@Html.Partial("_HeroSlider")
+
+<div id="home" class="container home">
+    @* Shopping nav here *@
+ @{ Html.RenderPartial("_MenuNavigation",Model.MenuCategories); }
+</div>

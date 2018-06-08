@@ -1,0 +1,51 @@
+﻿@model IList<PokeBowlWebApplication.Models.Home.MenuCategoryViewModel>
+
+<!-- Tabs -->
+<div class="row menu-navigation">
+    <div class="col-sm-12 space-bottom-2x">
+        <!-- Nav Tabs -->
+        <ul class="nav-tabs text-center" role="tablist">
+            @{
+                var i = 1;
+                foreach (var menuCategory in Model)
+                {
+                    var tabIndex = "#tab" + i;
+                    var active = i == 1 ? "active" : "";
+                    <li class="col-xs-4 @active">
+                        <a class="text-center" href="@tabIndex" role="tab" data-toggle="tab">
+                            <img class="img-circle" src="@menuCategory.ImgUrl" alt="Item">
+                            <p>@menuCategory.Category</p>
+                        </a>
+                    </li>
+                    i++;
+                }
+            }
+
+        </ul><!-- .nav-tabs -->
+        <!-- Tab panes -->
+        <div class="tab-content">
+            @{
+                i = 1;
+                foreach (var menuCategory in Model)
+                {
+                    var tabId = "tab" + i;
+                    var active = i == 1 ? "active" : "";
+                    <div role="tabpanel" class="tab-pane transition fade in @active" id="@tabId">
+                        <div class="toolbar-section" id="cart">
+                            <div class="shopping-cart">
+                                @{
+                                    foreach (var menuItem in menuCategory.MenuItems)
+                                    {
+                                        Html.RenderPartial("_MenuItem", menuItem);
+                                    }
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                 i++;
+                }
+            }
+        </div><!-- .tab-content -->
+    </div>
+</div>
