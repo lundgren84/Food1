@@ -38,11 +38,12 @@ namespace PokeBowlWebApplication.Controllers
                             new MenuCategoryViewModel()
                           {
                                Category= "Dryck",
+                               ImgUrl = "/Resourses/img/Poke/Drinks.jpg" ,
                                    MenuItems= new List<MenuItemViewModel>()
                                 {
-                                    new MenuItemViewModel(){Id = 7,Heading="Cola" },
-                                    new MenuItemViewModel(){Id = 8,Heading="Fanta" },
-                                    new MenuItemViewModel(){Id = 9,Heading="Sprite" },
+                                    new MenuItemViewModel(){Id = 7,Heading="Cola", ImgUrl="/Resourses/img/Poke/cola.png", Price= 19m },
+                                    new MenuItemViewModel(){Id = 8,Heading="Fanta", ImgUrl="/Resourses/img/Poke/fanta.png", Price= 19m },
+                                    new MenuItemViewModel(){Id = 9,Heading="Sprite" , ImgUrl="/Resourses/img/Poke/sprite.jpg", Price= 19m },
                                 }
                           },
                      }

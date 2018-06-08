@@ -5,7 +5,8 @@
 }
 
 .menu-navigation .nav-tabs img {
-    width: 80px;
+    /*width: 80px;*/
+    height:80px;
     display: unset;
 }
 

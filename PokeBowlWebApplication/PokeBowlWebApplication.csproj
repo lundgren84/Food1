@@ -254,10 +254,14 @@
     <Content Include="Resourses\img\market-btns\windows.png" />
     <Content Include="Resourses\img\pager\01.jpg" />
     <Content Include="Resourses\img\pager\02.jpg" />
+    <Content Include="Resourses\img\Poke\cola.png" />
+    <Content Include="Resourses\img\Poke\Drinks.jpg" />
+    <Content Include="Resourses\img\Poke\fanta.png" />
     <Content Include="Resourses\img\Poke\IMAGE_30463.JPG" />
     <Content Include="Resourses\img\Poke\Logo.png" />
     <Content Include="Resourses\img\Poke\logo_small.JPG" />
     <Content Include="Resourses\img\Poke\MangoPokeBowl_NotOk.jpg" />
+    <Content Include="Resourses\img\Poke\sprite.jpg" />
     <Content Include="Resourses\img\preloader.gif" />
     <Content Include="Resourses\img\shop\product-gallery\preview01.jpg" />
     <Content Include="Resourses\img\shop\product-gallery\preview02.jpg" />

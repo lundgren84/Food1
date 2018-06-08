@@ -10,7 +10,7 @@ namespace PokeBowlWebApplication.Models.Home
         public int Id { get; set; }
         public string Heading { get; set; } = "The Salmon";
         public string Description { get; set; } = "Wakamesallad, picklad rödlök, sojabönor, inlagd ingefära, gurka, rödkål, rädisor & vårlök. Toppas med chilimajo, teriyakisås och svart masagorom.";
-        public decimal Price { get; set; } = 108.0m;
+        public decimal Price { get; set; } = 125m;
         public string ImgUrl { get; set; } = "/Resourses/img/Poke/IMAGE_30463.JPG";
 
         //Collections
