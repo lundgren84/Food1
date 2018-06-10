@@ -6,7 +6,6 @@ namespace PokeBowlWebApplication.Models.AuthenticationModels
     {
         [Required(ErrorMessage = "Fyll i detta fält")]
         [Display(Name = "E-post")]
-        [EmailAddress]
         public string Username { get; set; }
         [Required(ErrorMessage = "Fyll i detta fält")]
         [Display(Name = "Lösenord")]

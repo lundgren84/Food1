@@ -9,7 +9,12 @@
             type: form.attr('method'),
             data: form.serialize(),
             success: function (data) {
-                $(".loginFormWrap").html(data);
+                if (data === "great success") {
+                    location.reload();
+                } else {
+                    $(".loginFormWrap").html(data);
+                }
+             
             },
             error: function (data) {
                 alert(data);

@@ -2,14 +2,18 @@
 
 <!-- Account (Login) -->
 <div class="toolbar-section" id="account">
-    <h3 class="toolbar-title space-bottom">Logga in här</h3>
-    <div class="inner loginFormWrap">
-  
-    @{ 
-        Html.RenderPartial("_LoginForm",Model);
-    }
-
-        <p class="text-sm space-top">Har du ingen användare? <a href="#signup" class="toggle-section">Registrera dig här</a></p>
-    </div><!-- .inner -->
+    @if (User.Identity.IsAuthenticated())
+    {
+        <h3 class="toolbar-title space-bottom">Logga in här</h3>
+        <div class="inner loginFormWrap">
+            @{
+                Html.RenderPartial("_LoginForm", Model);
+            }
+            <p class="text-sm space-top">Har du ingen användare? <a href="#signup" class="toggle-section">Registrera dig här</a></p>
+        </div><!-- .inner -->
+                }
+                else
+                {
+                    <p> Inloggad</p>
+                }
 </div><!-- .toolbar-section#account -->
-

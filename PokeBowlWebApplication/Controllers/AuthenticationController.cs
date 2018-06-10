@@ -76,8 +76,8 @@ namespace PokeBowlWebApplication.Controllers
 
             if (!ModelState.IsValid)
             {
-                resultModel.Success = false;
-                resultModel.ResultMessage = "Unvalid input values!";
+                model.Password = string.Empty;
+                ModelState.AddModelError(string.Empty, "Fel e-post eller lösenord");
                 return PartialView("_LoginForm",model);
                 //return Json(resultModel, JsonRequestBehavior.AllowGet);
             }
@@ -85,10 +85,9 @@ namespace PokeBowlWebApplication.Controllers
             var user = await userManager.FindAsync(model.Username, model.Password);
             if (user == null)
             {
-                resultModel.Success = false;
-                resultModel.ResultMessage = "Wrong username or password.";
+                model.Password = string.Empty;
+                ModelState.AddModelError(string.Empty, "Fel e-post eller lösenord");
                 return PartialView("_LoginForm", model);
-                //return Json(resultModel, JsonRequestBehavior.AllowGet);
             }
 
             var identity = await userManager.CreateIdentityAsync(user,
@@ -97,8 +96,7 @@ namespace PokeBowlWebApplication.Controllers
             authorisationManager.SignIn(identity);
 
             resultModel.Success = true;
-            return PartialView("_LoginForm", model);
-            //return Json(resultModel, JsonRequestBehavior.AllowGet);
+            return Content("great success");
         }
 
         public ActionResult Logout()
