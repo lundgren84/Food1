@@ -1,0 +1,36 @@
+﻿@model PokeBowlWebApplication.Models.AuthenticationModels.LoginModel
+
+<!-- Account (Login) -->
+<div class="toolbar-section" id="account">
+    <h3 class="toolbar-title space-bottom">Logga in här</h3>
+    <div class="inner">
+        @using (Html.BeginForm()) //class="login-form"
+            {
+
+            @Html.AntiForgeryToken()
+
+            @Html.LabelFor(model => model.Username)
+            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger", type = "text" , placeholder = "E-post" })
+
+            <label>E-post</label>
+                <input autocomplete="username" type="text" class="form-control" placeholder="E-post" required>
+
+
+                <label>Lösenord</label>
+                @Html.EditorFor(model => model.Password, new { type = "password", @class="form-control", placeholder="Lösenord" })
+                <input autocomplete="current-password">
+                <div class="form-footer">
+                    <div class="rememberme">
+                        <label class="checkbox">
+                            <input type="checkbox" checked> Kom ihåg mig
+                        </label>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">Logga in</button>
+                    </div>
+                </div>
+}
+        <p class="text-sm space-top">Har du ingen användare? <a href="#signup" class="toggle-section">Registrera dig här</a></p>
+    </div><!-- .inner -->
+</div><!-- .toolbar-section#account -->

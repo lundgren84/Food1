@@ -336,6 +336,7 @@
     <Content Include="Resourses\img\team\quote_author.jpg" />
     <Content Include="Resourses\img\video_bg.jpg" />
     <Content Include="Resourses\index.html" />
+    <Content Include="Resourses\js\Authentication.js" />
     <Content Include="Resourses\js\custom.js" />
     <Content Include="Resourses\js\scripts.js" />
     <Content Include="Resourses\js\vendor\bootstrap.js" />
@@ -536,7 +537,6 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_MiniCart.cshtml" />
     <Content Include="Views\Shared\_Checkout.cshtml" />
-    <Content Include="Views\Shared\_Account.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Shared\_HeroSlider.cshtml" />
     <Content Include="Views\Home\_MenuNavigation.cshtml" />
@@ -544,10 +544,15 @@
     <Content Include="Views\Shared\_CartItem.cshtml" />
     <Content Include="Views\Shared\_Slide.cshtml" />
     <Content Include="Views\Home\_ItemExtendModal.cshtml" />
+    <Content Include="Views\Shared\Authentication\_Login.cshtml" />
+    <Content Include="Views\Shared\Authentication\_Register.cshtml" />
+    <Content Include="Views\Shared\Authentication\asd.cshtml" />
+    <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Authentication\Register.cshtml" />
+    <Content Include="Views\Authentication\_LoginForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

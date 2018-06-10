@@ -11,16 +11,16 @@
     </a><!-- site-logo.visible-mobile -->
     <!-- Language Switcher -->
     @*<div class="lang-switcher">
-        <div class="lang-toggle">
-            <img src="~/Resourses/img/flags/GB.png" alt="English">
-            <i class="material-icons arrow_drop_down"></i>
-            <ul class="lang-dropdown">
-                <li><a href="#"><img src="~/Resourses/img/flags/FR.png" alt="French">FR</a></li>
-                <li><a href="#"><img src="~/Resourses/img/flags/DE.png" alt="German">DE</a></li>
-                <li><a href="#"><img src="~/Resourses/img/flags/IT.png" alt="Italian">IT</a></li>
-            </ul>
-        </div>
-    </div>*@<!-- .lang-switcher -->
+            <div class="lang-toggle">
+                <img src="~/Resourses/img/flags/GB.png" alt="English">
+                <i class="material-icons arrow_drop_down"></i>
+                <ul class="lang-dropdown">
+                    <li><a href="#"><img src="~/Resourses/img/flags/FR.png" alt="French">FR</a></li>
+                    <li><a href="#"><img src="~/Resourses/img/flags/DE.png" alt="German">DE</a></li>
+                    <li><a href="#"><img src="~/Resourses/img/flags/IT.png" alt="Italian">IT</a></li>
+                </ul>
+            </div>
+        </div>*@<!-- .lang-switcher -->
     <!-- Toolbar -->
     <div class="toolbar">
         <div class="inner">
@@ -37,7 +37,10 @@
     <!-- Toolbar Dropdown -->
     <div class="toolbar-dropdown">
         @Html.Partial("_Navigation")
-        @Html.Partial("_Account")
+        @{
+            Html.RenderAction("Login", "Authentication");
+            Html.RenderAction("Register", "Authentication");
+        }
         @Html.Partial("_MiniCart")
         @Html.Partial("_Checkout")
     </div><!-- .toolbar-dropdown -->
