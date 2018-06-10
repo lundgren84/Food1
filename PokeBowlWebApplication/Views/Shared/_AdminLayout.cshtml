@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+    <title>Poke | Helsingborg</title>
+
+    <!--SEO Meta Tags-->
+    <meta name="description" content="M-Store - Modern E-Commerce Template" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Hampus Lundgren" />
+
+    <!--Mobile Specific Meta Tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+
+    <!-- Google Material Icons -->
+    <link href="~/Resourses/css/vendor/material-icons.min.css" rel="stylesheet" media="screen">
+
+    <!-- Brand Icons -->
+    <link href="~/Resourses/css/vendor/socicon.min.css" rel="stylesheet" media="screen">
+
+    <!-- Bootstrap -->
+    <link href="~/Resourses/css/vendor/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- Theme Styles -->
+    <link href="~/Resourses/css/theme.min.css" rel="stylesheet" media="screen">
+
+    <!-- Custom style -->
+    <link href="~/Resourses/css/custom.css" rel="stylesheet" />
+    <link href="~/Resourses/css/shop.css" rel="stylesheet" />
+    <link href="~/Resourses/css/cart.css" rel="stylesheet" />
+    <!-- Page Preloading -->
+    <script src="~/Resourses/js/vendor/page-preloading.js"></script>
+
+    <!-- Modernizr -->
+    <script src="~/Resourses/js/vendor/modernizr.custom.js"></script>
+
+    <!--Google Maps API-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5DLwPPVAz88_k0yO2nmFe7T9k1urQs84"></script>
+</head>
+
+<!-- Body -->
+<!-- Adding/Removing class ".page-preloading" is enabling/disabling background smooth page transition effect and spinner. Make sure you also added/removed link to page-preloading.js script in the <head> of the document. -->
+<body class="page-preloading">
+
+    <!-- Page Pre-Loader -->
+    <div class="page-preloader">
+        <div class="preloader">
+            <img src="~/Resourses/img/preloader.gif" alt="Preloader">
+        </div>
+    </div><!-- .page-preloader -->
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+
+        @Html.Partial("_Header")
+
+        <!-- Content -->
+        <div class="container">
+        @RenderBody()
+        </div>
+        <!-- Footer -->
+        @Html.Partial("_Footer")
+
+    </div><!-- .page-wrapper -->
+
+    <div id="cover" style="z-index:500" class="hidden modal-backdrop fade in"></div>
+    <!-- JavaScript (jQuery) libraries, plugins and custom scripts -->
+    <script src="~/Resourses/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="~/Resourses/js/vendor/bootstrap.min.js"></script>
+    <script src="~/Resourses/js/vendor/smoothscroll.js"></script>
+    <script src="~/Resourses/js/vendor/velocity.min.js"></script>
+    <script src="~/Resourses/js/vendor/waves.min.js"></script>
+    <script src="~/Resourses/js/vendor/icheck.min.js"></script>
+    <script src="~/Resourses/js/vendor/gmap3.min.js"></script>
+    <script src="~/Resourses/js/vendor/owl.carousel.min.js"></script>
+    <script src="~/Resourses/js/vendor/jquery.downCount.js"></script>
+    <script src="~/Resourses/js/vendor/magnific-popup.min.js"></script>
+    <script src="~/Resourses/js/scripts.js"></script>
+    <script src="~/Resourses/js/custom.js"></script>
+    <script src="~/Resourses/js/Authentication.js"></script>
+</body><!-- <body> -->
+
+</html>

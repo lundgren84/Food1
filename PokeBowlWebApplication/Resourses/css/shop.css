@@ -6,65 +6,80 @@
 
 .menu-navigation .nav-tabs img {
     /*width: 80px;*/
-    height:80px;
+    height: 80px;
     display: unset;
 }
 
 /* Add to cart button*/
 
 /* Shop item */
- .home .shopping-cart .item.origin-menu-item {
+div.item.origin-menu-item {
+    cursor: pointer;
+    transition: background-color ease-in-out .5s;
+}
+
+.item-remove {
+    transition: all .5s ease-in-out;
+}
+
+div.item.origin-menu-item:hover .item-remove {
+    transform: scale(1.5);
+    transition: all .5s ease-in-out;
+    background-color:#606060;
+    color:white;
+}
+
+.home .shopping-cart .item.origin-menu-item {
     padding: 0 180px 0 0
 }
 
-     .shopping-cart .item.origin-menu-item img {
-        width: 120px;
-        min-width: 50px;
-        padding: 5px 0;
-        margin-bottom: 10px;
-    }
+.shopping-cart .item.origin-menu-item img {
+    width: 120px;
+    min-width: 50px;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
 
-     .shopping-cart .item.origin-menu-item .item-details {
-        padding-left: 10px;
-    }
+.shopping-cart .item.origin-menu-item .item-details {
+    padding-left: 10px;
+}
 
-     .shopping-cart .item .item-title {
-
+.shopping-cart .item .item-title {
     margin-bottom: 0;
 }
 
 @media screen and (max-width: 1089px) {
-     .home .shopping-cart .item.origin-menu-item {
+    .home .shopping-cart .item.origin-menu-item {
         padding: 0 80px 0 0
     }
 }
 
 @media screen and (max-width: 691px) {
     .shopping-cart .item .item-title {
-    font-size: 16px;
-    font-weight: normal;
-}
+        font-size: 16px;
+        font-weight: normal;
+    }
 
-     .shopping-cart .item p {
+    .shopping-cart .item p {
         font-size: 12px;
     }
 
-     .shopping-cart .item h3 {
+    .shopping-cart .item h3 {
         font-size: 14px;
     }
 }
 
 @media screen and (max-width: 480px) {
 
-     .home .shopping-cart .item.origin-menu-item {
+    .home .shopping-cart .item.origin-menu-item {
         padding: 0 45px 0 0;
     }
 
-     .shopping-cart .item p {
+    .shopping-cart .item p {
         font-size: 12px;
     }
 
-     .shopping-cart .item h3 {
+    .shopping-cart .item h3 {
         font-size: 14px;
     }
 

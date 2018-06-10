@@ -104,7 +104,7 @@ namespace PokeBowlWebApplication.Controllers
             var authorisationManager = HttpContext.GetOwinContext().Authentication;
             authorisationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
 
-            return null;
+            return RedirectToAction("Index","Home",null);
         }
     }
 }
