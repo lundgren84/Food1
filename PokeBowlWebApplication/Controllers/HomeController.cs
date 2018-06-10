@@ -1,9 +1,9 @@
 ﻿using PokeBowlWebApplication.Models.Home;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+using System.Linq;
+using System;
 
 namespace PokeBowlWebApplication.Controllers
 {
@@ -11,44 +11,27 @@ namespace PokeBowlWebApplication.Controllers
     {
         public ActionResult Index()
         {
-            var model = new HomeViewModel()
-            {
-                MenuCategories = new List<MenuCategoryViewModel>()
-                     {
-                          new MenuCategoryViewModel()
-                          {
-                               Category= "Bowls",
-                                MenuItems= new List<MenuItemViewModel>()
-                                {
-                                    new MenuItemViewModel(){Id = 1,Heading="The Salmon" },
-                                    new MenuItemViewModel(){Id = 2,Heading="The Tuna" },
-                                    new MenuItemViewModel(){Id = 3,Heading="The Veggie" },
-                                }
-                          },
-                           new MenuCategoryViewModel()
-                          {
-                               Category= "Sallad",
-                                   MenuItems= new List<MenuItemViewModel>()
-                                {
-                                    new MenuItemViewModel(){Id = 4,Heading="Chop chop sallad" },
-                                    new MenuItemViewModel(){Id = 5,Heading="Greek sallad" },
-                                    new MenuItemViewModel(){Id = 6,Heading="Veggie sallad" },
-                                }
-                          },
-                            new MenuCategoryViewModel()
-                          {
-                               Category= "Dryck",
-                               ImgUrl = "/Resourses/img/Poke/Drinks.jpg" ,
-                                   MenuItems= new List<MenuItemViewModel>()
-                                {
-                                    new MenuItemViewModel(){Id = 7,Heading="Cola", ImgUrl="/Resourses/img/Poke/cola.png", Price= 19m },
-                                    new MenuItemViewModel(){Id = 8,Heading="Fanta", ImgUrl="/Resourses/img/Poke/fanta.png", Price= 19m },
-                                    new MenuItemViewModel(){Id = 9,Heading="Sprite" , ImgUrl="/Resourses/img/Poke/sprite.jpg", Price= 19m },
-                                }
-                          },
-                     }
-            };
+            var model = CreateModel();
+      
+
             return View(model);
+        }
+
+        private HomeViewModel CreateModel()
+        {
+            using (var db = new PokeDbContext())
+            {
+                var menuCategories = db.MenuCategories.
+                    Include(x => x.Items).
+                    Include(x => x.ItemAdds).ToList();
+
+                var model = new HomeViewModel
+                {
+                    MenuCategories = menuCategories.ToModel()
+                };
+
+                return model;
+            }    
         }
 
         public ActionResult About()

@@ -181,11 +181,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="IdentityDatabaseContext.cs" />
+    <Compile Include="MappingExtensions.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AuthenticationModels\AuthenticationResultModel.cs" />
+    <Compile Include="Models\AuthenticationModels\LoginModel.cs" />
+    <Compile Include="Models\AuthenticationModels\RegisterViewModel.cs" />
     <Compile Include="Models\Dto\CartEntity.cs" />
     <Compile Include="Models\Dto\CartLineEntity.cs" />
-    <Compile Include="Models\Dto\ItemAddonsEntity.cs" />
+    <Compile Include="Models\Dto\ItemAddonEntity.cs" />
     <Compile Include="Models\Dto\MenuCategoryEntity.cs" />
     <Compile Include="Models\Dto\MenuItemEntity.cs" />
     <Compile Include="Models\Home\ExtrasModalViewModel.cs" />
@@ -194,6 +199,8 @@
     <Compile Include="Models\Home\MenuItemViewModel.cs" />
     <Compile Include="PokeDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CookieService.cs" />
+    <Compile Include="Services\ImageService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />

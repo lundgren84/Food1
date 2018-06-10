@@ -8,5 +8,6 @@ namespace PokeBowlWebApplication.Models.Home
     public class HomeViewModel
     {
         public List<MenuCategoryViewModel> MenuCategories { get; set; }
+
     }
 }

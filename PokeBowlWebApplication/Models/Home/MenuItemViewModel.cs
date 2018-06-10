@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using PokeBowlWebApplication.Models.Dto;
+using System.Collections.Generic;
 
 namespace PokeBowlWebApplication.Models.Home
 {
@@ -9,10 +10,7 @@ namespace PokeBowlWebApplication.Models.Home
         public string Description { get; set; } = "Wakamesallad, picklad rödlök, sojabönor, inlagd ingefära, gurka, rödkål, rädisor & vårlök. Toppas med chilimajo, teriyakisås och svart masagorom.";
         public decimal Price { get; set; } = 125m;
         public string ImgUrl { get; set; } = "/Resourses/img/Poke/IMAGE_30463.JPG";
-
         //Collections
-        public List<MenuItemViewModel> MenuItems { get; set; } = new List<MenuItemViewModel>();
-
         public ExtrasModalViewModel ExtrasModalModel { get; set; } = new ExtrasModalViewModel()
         {
             Heading = "Extras",
