@@ -1,27 +1,38 @@
 ﻿        <!-- Menu -->
-<div class="toolbar-section" id="menu">
+<div class="toolbar-section set-scroll" id="menu">
     <div class="inner">
         <ul class="main-navigation space-bottom">
             <li class="menu-item-has-children current-menu-item">
                 <a href="#">Butik: Helsingborg city</a>
                 <ul class="sub-menu">
-                    <li><a href="#">Helsingborg city</a></li>
-                    <li><a href="#">Maria park</a></li>
+                    <li><a href="#"><i style="width:18px" class="material-icons">home</i> Helsingborg city</a></li>
+                    <li><a href="#"><i style="width:18px" class="material-icons">home</i> Maria park</a></li>
                 </ul>
             </li>
             <li><a href="~/">Hem</a></li>
             <li><a href="#home">Meny / Beställ</a></li> @*Om man e på index*@
             <li><a href="~/Home/About">Om oss</a></li>
             <li><a href="~/Home/Contact">Kontakt</a></li>  
-            <li class="menu-item-has-children current-menu-item">
-                <a href="#">Templates</a>
-                <ul class="sub-menu">
-                    <li class="current-menu-item"><a href="~/Resourses/index.html">Home Version 1</a></li>
-                    <li><a href="~/Resourses/home-v2.html">Home Version 2</a></li>
-                    <li><a href="~/Resourses/home-v3.html">Home Version 3</a></li>
-                    <li><a href="Resourses/elements.html">Elements</a></li>
-                </ul>
-            </li>
+           
+        @{
+            if (User.IsInRole("Admin") || User.IsInRole("Manager") || User.IsInRole("Employee"))
+            {
+                <li><i style="width:18px; font-size:20px; vertical-align:baseline" class="material-icons">public</i> <a href="~/Home/Contact">Online-orders</a></li>
+            }
+            if (User.IsInRole("Admin") || User.IsInRole("Manager"))
+            {
+                <li class="menu-item-has-children current-menu-item">
+                    <i style="width:18px; font-size:20px; vertical-align:baseline" class="material-icons">person</i>
+                    <a href="#">Admin area</a>
+                    <ul class="sub-menu">
+                        <li><a href="~/Resourses/index.html"><i style="width:18px" class="material-icons">label_important</i> Shop info</a></li>
+                        <li><a href="~/Resourses/home-v2.html"><i style="width:18px" class="material-icons">label_important</i> Accout managment</a></li>
+                        <li><a href="~/Resourses/home-v3.html"><i style="width:18px" class="material-icons">label_important</i> Menu manager</a></li>         
+                    </ul>
+                </li>
+            }
+        }
+           
         </ul><!-- .main-navigation -->
         <ul class="list-icon text-sm">
             <li>

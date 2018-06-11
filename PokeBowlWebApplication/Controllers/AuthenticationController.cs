@@ -30,7 +30,7 @@ namespace PokeBowlWebApplication.Controllers
         {
             if (!ModelState.IsValid)
             {
-                model.password = string.Empty;
+                model.Password = string.Empty;
                 model.PasswordRepeat = string.Empty;
                 return PartialView("_RegisterForm", model);
             }
@@ -39,9 +39,9 @@ namespace PokeBowlWebApplication.Controllers
             {
                 UserName = model.Username,
                 Email = model.Username,
-                PhoneNumber = model.PhoneNumber
+                PhoneNumber = model.PhoneNumber.ToString()
             };
-            var result = await userManager.CreateAsync(user, model.password);
+            var result = await userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
@@ -53,12 +53,15 @@ namespace PokeBowlWebApplication.Controllers
                 //Sign in
                 authorisationManager.SignIn(identity);
 
-                return PartialView("_RegisterForm", model);
+                return Content("great success");
             }
 
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error);
+            }
 
-            // TODO  Add result errors to modelerrors
-            model.password = string.Empty;
+            model.Password = string.Empty;
             model.PasswordRepeat = string.Empty;
             return PartialView("_RegisterForm", model);
         }

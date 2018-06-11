@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PokeBowlWebApplication.Models.Dto
 {
@@ -16,5 +18,12 @@ namespace PokeBowlWebApplication.Models.Dto
         //Collections
         public List<MenuItemEntity> Items { get; set; } = new List<MenuItemEntity>();
         public List<ItemAddonEntity> ItemAdds { get; set; } = new List<ItemAddonEntity>();
+
+        //Foreign Keys
+        [DisplayName("Shop1 reference Id")]
+        public int Shop1RefId { get; set; }
+
+        [DisplayName("Shop2 reference Id")]
+        public int Shop2RefId { get; set; }
     }
 }

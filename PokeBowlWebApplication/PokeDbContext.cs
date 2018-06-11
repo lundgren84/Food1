@@ -8,6 +8,7 @@ namespace PokeBowlWebApplication
         public PokeDbContext() : base ("PokeConnectionString")
         { }
 
+        public DbSet<ShopEntity> Shops { get; set; }
         public DbSet<MenuCategoryEntity> MenuCategories { get; set; }
         public DbSet<MenuItemEntity> MenuItems { get; set; }
         public DbSet<ItemAddonEntity> ItemAddons { get; set; }

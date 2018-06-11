@@ -23,7 +23,6 @@ div.item.origin-menu-item {
 }
 
 div.item.origin-menu-item:hover .item-remove {
-    transform: scale(1.5);
     transition: all .5s ease-in-out;
     background-color:#606060;
     color:white;

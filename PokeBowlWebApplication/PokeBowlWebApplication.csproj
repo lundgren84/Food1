@@ -194,6 +194,7 @@
     <Compile Include="Models\Dto\ItemAddonEntity.cs" />
     <Compile Include="Models\Dto\MenuCategoryEntity.cs" />
     <Compile Include="Models\Dto\MenuItemEntity.cs" />
+    <Compile Include="Models\Dto\ShopEntity.cs" />
     <Compile Include="Models\Home\ExtrasModalViewModel.cs" />
     <Compile Include="Models\Home\HomeViewModel.cs" />
     <Compile Include="Models\Home\MenuCategoryViewModel.cs" />
@@ -218,6 +219,7 @@
     <Content Include="Resourses\blog\single-post03.html" />
     <Content Include="Resourses\blog\single-post04.html" />
     <Content Include="Resourses\contacts.html" />
+    <Content Include="Resourses\css\authentication.css" />
     <Content Include="Resourses\css\cart.css" />
     <Content Include="Resourses\css\custom.css" />
     <Content Include="Resourses\css\shop.css" />
@@ -552,11 +554,6 @@
     <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Authentication\_LoginForm.cshtml" />
     <Content Include="Views\Authentication\_Authenticated.cshtml" />
-    <Content Include="Views\MenuCategoryEntities\Create.cshtml" />
-    <Content Include="Views\MenuCategoryEntities\Delete.cshtml" />
-    <Content Include="Views\MenuCategoryEntities\Details.cshtml" />
-    <Content Include="Views\MenuCategoryEntities\Edit.cshtml" />
-    <Content Include="Views\MenuCategoryEntities\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\MenuItemEntities\Create.cshtml" />
     <Content Include="Views\MenuItemEntities\Delete.cshtml" />
@@ -564,6 +561,11 @@
     <Content Include="Views\MenuItemEntities\Edit.cshtml" />
     <Content Include="Views\MenuItemEntities\Index.cshtml" />
     <Content Include="Views\Authentication\_RegisterForm.cshtml" />
+    <Content Include="Views\MenuCategoryEntities\Create.cshtml" />
+    <Content Include="Views\MenuCategoryEntities\Delete.cshtml" />
+    <Content Include="Views\MenuCategoryEntities\Details.cshtml" />
+    <Content Include="Views\MenuCategoryEntities\Edit.cshtml" />
+    <Content Include="Views\MenuCategoryEntities\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

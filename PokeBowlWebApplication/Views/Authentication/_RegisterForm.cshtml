@@ -1,16 +1,31 @@
 ﻿@model PokeBowlWebApplication.Models.AuthenticationModels.RegisterViewModel
 
-<form method="post" class="login-form">
-    <label>E-post</label>
-    <input autocomplete="username" type="email" class="form-control" placeholder="E-post" required>
-    <label>Lösenord</label>
-    <input autocomplete="new-password" type="password" class="form-control" placeholder="Lösenord" required>
-    <label>Lösenord igen</label>
-    <input autocomplete="new-password" type="password" class="form-control" placeholder="Lösenord igen" required>
-    <div class="form-footer">
-        <div class="rememberme"></div>
+@using (Html.BeginForm("Register", "Authentication", FormMethod.Post, new { @class = "login-form jsRegisterForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.LabelFor(model => model.Username)
+    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", autocomplete = "username" } })
+    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger form-errormessage", type = "text", placeholder = "E-post" })
+
+    @Html.LabelFor(model => model.PhoneNumber, new { @class = "margin-top" })
+    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control hide-indicators", autocomplete = "username" } })
+    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger form-errormessage", type = "text", placeholder = "E-post" })
+
+    @Html.LabelFor(model => model.Password, new { @class = "margin-top" })
+    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", autocomplete = "current-password", type = "password" } })
+    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger form-errormessage" })
+
+    @Html.LabelFor(model => model.PasswordRepeat, new { @class = "margin-top" })
+    @Html.EditorFor(model => model.PasswordRepeat, new { htmlAttributes = new { @class = "form-control", autocomplete = "current-password", type = "password" } })
+    @Html.ValidationMessageFor(model => model.PasswordRepeat, "", new { @class = "text-danger form-errormessage" })
+
+    <div class="form-footer margin-top">
         <div class="form-submit">
             <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">Registrera</button>
         </div>
     </div>
-</form><!-- .login-form -->
+}
+
+<script src="~/Resourses/js/Authentication.js"></script>

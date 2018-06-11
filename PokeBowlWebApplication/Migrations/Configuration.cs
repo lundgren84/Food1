@@ -19,13 +19,25 @@ namespace PokeBowlWebApplication.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-
+            if (!context.Shops.Any())
+            {
+                var shops = new List<ShopEntity>()
+                {
+                    new ShopEntity(){ Name = "Empty" },
+                    new ShopEntity(){ Name = "Mariapark" },
+                    new ShopEntity(){ Name = "Helsingborg City" }
+                };
+                context.Shops.AddRange(shops);
+                context.SaveChanges();
+            }
             if (!context.MenuCategories.Any())
             {
                 var DefaultCategories = new List<MenuCategoryEntity>()
                 {
                       new MenuCategoryEntity()
                       {
+                          Shop1RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
+                          Shop2RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
                           Category = "Bowls",
                           ItemAddonHeading = "Extras",
                           Items = new List<MenuItemEntity>()
@@ -44,6 +56,8 @@ namespace PokeBowlWebApplication.Migrations
                       },
                       new MenuCategoryEntity()
                       {
+                          Shop1RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
+                          Shop2RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
                           Category = "Sallad",
                           ItemAddonHeading = "Extras",
                           Items = new List<MenuItemEntity>()
@@ -62,6 +76,8 @@ namespace PokeBowlWebApplication.Migrations
                       },
                       new MenuCategoryEntity()
                       {
+                          Shop1RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
+                          Shop2RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
                           Category = "Dryck",
                           Items = new List<MenuItemEntity>()
                           {

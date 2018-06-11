@@ -20,10 +20,6 @@ var menuOpen = false;
 $(".toolbar-toggle").on("click", function () {
     var me = $(this);
 
- 
-
-    console.log(me.attr("class"))
-
     var cartClick = me.hasClass("open-cart-btn")
     var menuClick = me.hasClass("open-menu-btn")
     var accClick = me.hasClass("open-account-btn")
@@ -44,7 +40,7 @@ $(".toolbar-toggle").on("click", function () {
         accOpen = false;
     }
 
-    if (cartOpen) {
+    if (cartOpen || accOpen || menuOpen) {
         $("body").addClass("noscroll"); 
         $("#cover").removeClass("hidden"); 
     } else {

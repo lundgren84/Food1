@@ -1,12 +1,13 @@
 ﻿@model PokeBowlWebApplication.Models.AuthenticationModels.RegisterViewModel
 
 <!-- Account (Sign Up) -->
-<div class="toolbar-section" id="signup">
+<div class="toolbar-section set-scroll" id="signup">
     <h3 class="toolbar-title space-bottom">Registrera användare</h3>
-    <div class="inner">
+    <p class="text-sm space-top">Har du redan ett konto? <a href="#account" class="toggle-section">Logga in här</a></p>
+    <div class="inner jsRegisterFormWrap">
     @{ 
         Html.RenderPartial("_RegisterForm", Model);
     }
-        <p class="text-sm space-top">Har du redan ett konto? <a href="#account" class="toggle-section">Logga in här</a></p>
-    </div><!-- .inner -->
-</div><!-- .toolbar-section#account -->
+       
+    </div>
+</div>

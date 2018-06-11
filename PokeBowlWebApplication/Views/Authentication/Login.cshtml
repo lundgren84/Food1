@@ -1,19 +1,21 @@
 ﻿@model PokeBowlWebApplication.Models.AuthenticationModels.LoginModel
 
 <!-- Account (Login) -->
-<div class="toolbar-section" id="account">
+<div class="toolbar-section set-scroll" id="account">
     @if (!User.Identity.IsAuthenticated)
     {
         <h3 class="toolbar-title space-bottom">Logga in här</h3>
-        <div class="inner loginFormWrap">
+        <p class="text-sm space-top">Inget konto? <a href="#signup" class="toggle-section">Registrera dig här</a></p>
+        <div class="inner jsLoginFormWrap">
             @{
                 Html.RenderPartial("_LoginForm", Model);
             }
-            <p class="text-sm space-top">Har du ingen användare? <a href="#signup" class="toggle-section">Registrera dig här</a></p>
-        </div><!-- .inner -->
+
+        </div>
+       
                 }
                 else
                 {
                     Html.RenderPartial("_Authenticated", Model);
                 }
-</div><!-- .toolbar-section#account -->
+</div>
