@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using PokeBowlWebApplication.Models.AuthenticationModels;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -26,14 +25,14 @@ namespace PokeBowlWebApplication.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            var resultModel = new AuthenticationResultModel();
             if (!ModelState.IsValid)
             {
-                resultModel.Success = false;
-                resultModel.ResultMessage = "Unvalid input values!";
-                return Json(resultModel, JsonRequestBehavior.AllowGet);
+                model.password = string.Empty;
+                model.PasswordRepeat = string.Empty;
+                return PartialView("_RegisterForm", model);
             }
 
             var user = new IdentityUser
@@ -41,7 +40,6 @@ namespace PokeBowlWebApplication.Controllers
                 UserName = model.Username,
                 Email = model.Username,
                 PhoneNumber = model.PhoneNumber
-
             };
             var result = await userManager.CreateAsync(user, model.password);
 
@@ -55,12 +53,14 @@ namespace PokeBowlWebApplication.Controllers
                 //Sign in
                 authorisationManager.SignIn(identity);
 
-                resultModel.Success = true;
-                return Json(resultModel, JsonRequestBehavior.AllowGet);
+                return PartialView("_RegisterForm", model);
             }
-            resultModel.Success = false;
-            resultModel.ResultMessage = result.Errors.First();
-            return Json(resultModel, JsonRequestBehavior.AllowGet);
+
+
+            // TODO  Add result errors to modelerrors
+            model.password = string.Empty;
+            model.PasswordRepeat = string.Empty;
+            return PartialView("_RegisterForm", model);
         }
 
         [HttpGet]
@@ -70,16 +70,14 @@ namespace PokeBowlWebApplication.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginModel model)
         {
-            var resultModel = new AuthenticationResultModel();
-
             if (!ModelState.IsValid)
             {
                 model.Password = string.Empty;
                 ModelState.AddModelError(string.Empty, "Fel e-post eller lösenord");
                 return PartialView("_LoginForm",model);
-                //return Json(resultModel, JsonRequestBehavior.AllowGet);
             }
 
             var user = await userManager.FindAsync(model.Username, model.Password);
@@ -95,7 +93,6 @@ namespace PokeBowlWebApplication.Controllers
             var authorisationManager = HttpContext.GetOwinContext().Authentication;
             authorisationManager.SignIn(identity);
 
-            resultModel.Success = true;
             return Content("great success");
         }
 

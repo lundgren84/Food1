@@ -187,7 +187,6 @@
     <Compile Include="IdentityDatabaseContext.cs" />
     <Compile Include="MappingExtensions.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AuthenticationModels\AuthenticationResultModel.cs" />
     <Compile Include="Models\AuthenticationModels\LoginModel.cs" />
     <Compile Include="Models\AuthenticationModels\RegisterViewModel.cs" />
     <Compile Include="Models\Dto\CartEntity.cs" />
@@ -564,6 +563,7 @@
     <Content Include="Views\MenuItemEntities\Details.cshtml" />
     <Content Include="Views\MenuItemEntities\Edit.cshtml" />
     <Content Include="Views\MenuItemEntities\Index.cshtml" />
+    <Content Include="Views\Authentication\_RegisterForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
