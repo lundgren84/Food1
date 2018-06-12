@@ -180,6 +180,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuCategoryEntitiesController.cs" />
     <Compile Include="Controllers\MenuItemEntitiesController.cs" />
+    <Compile Include="Controllers\ShopEntitiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -555,17 +556,23 @@
     <Content Include="Views\Authentication\_LoginForm.cshtml" />
     <Content Include="Views\Authentication\_Authenticated.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\MenuItemEntities\Create.cshtml" />
-    <Content Include="Views\MenuItemEntities\Delete.cshtml" />
-    <Content Include="Views\MenuItemEntities\Details.cshtml" />
-    <Content Include="Views\MenuItemEntities\Edit.cshtml" />
-    <Content Include="Views\MenuItemEntities\Index.cshtml" />
     <Content Include="Views\Authentication\_RegisterForm.cshtml" />
     <Content Include="Views\MenuCategoryEntities\Create.cshtml" />
     <Content Include="Views\MenuCategoryEntities\Delete.cshtml" />
     <Content Include="Views\MenuCategoryEntities\Details.cshtml" />
     <Content Include="Views\MenuCategoryEntities\Edit.cshtml" />
     <Content Include="Views\MenuCategoryEntities\Index.cshtml" />
+    <Content Include="Views\MenuItemEntities\Create.cshtml" />
+    <Content Include="Views\MenuItemEntities\Delete.cshtml" />
+    <Content Include="Views\MenuItemEntities\Details.cshtml" />
+    <Content Include="Views\MenuItemEntities\Edit.cshtml" />
+    <Content Include="Views\MenuItemEntities\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminNavigation.cshtml" />
+    <Content Include="Views\ShopEntities\Create.cshtml" />
+    <Content Include="Views\ShopEntities\Delete.cshtml" />
+    <Content Include="Views\ShopEntities\Details.cshtml" />
+    <Content Include="Views\ShopEntities\Edit.cshtml" />
+    <Content Include="Views\ShopEntities\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

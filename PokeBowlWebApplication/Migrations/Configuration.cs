@@ -36,8 +36,6 @@ namespace PokeBowlWebApplication.Migrations
                 {
                       new MenuCategoryEntity()
                       {
-                          Shop1RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
-                          Shop2RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
                           Category = "Bowls",
                           ItemAddonHeading = "Extras",
                           Items = new List<MenuItemEntity>()
@@ -56,8 +54,6 @@ namespace PokeBowlWebApplication.Migrations
                       },
                       new MenuCategoryEntity()
                       {
-                          Shop1RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
-                          Shop2RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
                           Category = "Sallad",
                           ItemAddonHeading = "Extras",
                           Items = new List<MenuItemEntity>()
@@ -76,8 +72,6 @@ namespace PokeBowlWebApplication.Migrations
                       },
                       new MenuCategoryEntity()
                       {
-                          Shop1RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
-                          Shop2RefId = context.Shops.FirstOrDefault(x=> x.Name == "Empty").Id,
                           Category = "Dryck",
                           Items = new List<MenuItemEntity>()
                           {

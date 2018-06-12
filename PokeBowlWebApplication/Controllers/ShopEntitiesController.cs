@@ -1,117 +1,117 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
+using PokeBowlWebApplication;
 using PokeBowlWebApplication.Models.Dto;
 
 namespace PokeBowlWebApplication.Controllers
 {
-    public class MenuItemEntitiesController : Controller
+    public class ShopEntitiesController : Controller
     {
         private PokeDbContext db = new PokeDbContext();
 
-        // GET: MenuItemEntities
+        // GET: ShopEntities
         public ActionResult Index()
         {
-            var menuItems = db.MenuItems.Include(m => m.MenuCategory);
-            return View(menuItems.ToList());
+            return View(db.Shops.ToList());
         }
 
-        // GET: MenuItemEntities/Details/5
+        // GET: ShopEntities/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MenuItemEntity menuItemEntity = db.MenuItems.Find(id);
-            if (menuItemEntity == null)
+            ShopEntity shopEntity = db.Shops.Find(id);
+            if (shopEntity == null)
             {
                 return HttpNotFound();
             }
-            return View(menuItemEntity);
+            return View(shopEntity);
         }
 
-        // GET: MenuItemEntities/Create
+        // GET: ShopEntities/Create
         public ActionResult Create()
         {
-            ViewBag.MenuCategoryRefId = new SelectList(db.MenuCategories, "Id", "Category");
             return View();
         }
 
-        // POST: MenuItemEntities/Create
+        // POST: ShopEntities/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Heading,Description,Price,ImgUrl,MenuCategoryRefId")] MenuItemEntity menuItemEntity)
+        public ActionResult Create([Bind(Include = "Id,Name,Phone")] ShopEntity shopEntity)
         {
             if (ModelState.IsValid)
             {
-                db.MenuItems.Add(menuItemEntity);
+                db.Shops.Add(shopEntity);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MenuCategoryRefId = new SelectList(db.MenuCategories, "Id", "Category", menuItemEntity.MenuCategoryRefId);
-            return View(menuItemEntity);
+            return View(shopEntity);
         }
 
-        // GET: MenuItemEntities/Edit/5
+        // GET: ShopEntities/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MenuItemEntity menuItemEntity = db.MenuItems.Find(id);
-            if (menuItemEntity == null)
+            ShopEntity shopEntity = db.Shops.Find(id);
+            if (shopEntity == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MenuCategoryRefId = new SelectList(db.MenuCategories, "Id", "Category", menuItemEntity.MenuCategoryRefId);
-            return View(menuItemEntity);
+            return View(shopEntity);
         }
 
-        // POST: MenuItemEntities/Edit/5
+        // POST: ShopEntities/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Heading,Description,Price,ImgUrl,MenuCategoryRefId")] MenuItemEntity menuItemEntity)
+        public ActionResult Edit([Bind(Include = "Id,Name,Phone")] ShopEntity shopEntity)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(menuItemEntity).State = EntityState.Modified;
+                db.Entry(shopEntity).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MenuCategoryRefId = new SelectList(db.MenuCategories, "Id", "Category", menuItemEntity.MenuCategoryRefId);
-            return View(menuItemEntity);
+            return View(shopEntity);
         }
 
-        // GET: MenuItemEntities/Delete/5
+        // GET: ShopEntities/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MenuItemEntity menuItemEntity = db.MenuItems.Find(id);
-            if (menuItemEntity == null)
+            ShopEntity shopEntity = db.Shops.Find(id);
+            if (shopEntity == null)
             {
                 return HttpNotFound();
             }
-            return View(menuItemEntity);
+            return View(shopEntity);
         }
 
-        // POST: MenuItemEntities/Delete/5
+        // POST: ShopEntities/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            MenuItemEntity menuItemEntity = db.MenuItems.Find(id);
-            db.MenuItems.Remove(menuItemEntity);
+            ShopEntity shopEntity = db.Shops.Find(id);
+            db.Shops.Remove(shopEntity);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

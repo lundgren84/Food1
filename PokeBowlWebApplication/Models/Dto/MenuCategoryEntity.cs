@@ -19,11 +19,13 @@ namespace PokeBowlWebApplication.Models.Dto
         public List<MenuItemEntity> Items { get; set; } = new List<MenuItemEntity>();
         public List<ItemAddonEntity> ItemAdds { get; set; } = new List<ItemAddonEntity>();
 
-        //Foreign Keys
-        [DisplayName("Shop1 reference Id")]
-        public int Shop1RefId { get; set; }
 
-        [DisplayName("Shop2 reference Id")]
-        public int Shop2RefId { get; set; }
+        public List<ShopEntity> Shops { get; set; } = new List<ShopEntity>();
+        //Foreign Keys
+        //[DisplayName("Shop1 reference Id")]
+        //public int Shop1RefId { get; set; }
+
+        //[DisplayName("Shop2 reference Id")]
+        //public int Shop2RefId { get; set; }
     }
 }

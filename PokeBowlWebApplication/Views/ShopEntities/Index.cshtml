@@ -1,11 +1,11 @@
-﻿@model IEnumerable<PokeBowlWebApplication.Models.Dto.MenuCategoryEntity>
+﻿@model IEnumerable<PokeBowlWebApplication.Models.Dto.ShopEntity>
 
 @{
-    ViewBag.Title = "Categories";
+    ViewBag.Title = "Shops";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container">
-    @{ 
+    @{
         Html.RenderPartial("_AdminNavigation");
     }
     <h4>@ViewBag.Title</h4>
@@ -16,13 +16,10 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Category)
+                @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImgUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemAddonHeading)
+                @Html.DisplayNameFor(model => model.Phone)
             </th>
             <th></th>
         </tr>
@@ -31,13 +28,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Category)
+                    @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ImgUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemAddonHeading)
+                    @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
